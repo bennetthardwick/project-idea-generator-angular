@@ -1,0 +1,13 @@
+<h3>what's it for</h3>
+<p>This Angular 5 app was made for the <a target="_blank" href="https://codenetwork.co/">CODE Network</a> showcase night. It was made in just a few hours before the event because I was upset I didn't have anything to show.</p>
+
+<h3>making ideas</h3>
+<p>It's super easy! Just click the generate button.</p>
+
+<h3>adding data</h3>
+<p>I use <a target="_blank" href="https://bl.ocks.org/cjrd/6863459">this d3.js application</a> to define the grammar for the app. Words that are prefixed with an underscore '_' are placeholders for random words. For example, _noun would be substituted with a random noun. Likewise, _adjective would be substituted by a random adjective. The graph must also start at _start and end at _end. Download and upload <a target="_blank" href="https://gist.github.com/bennetthardwick/ec1984f8c04b30495e59cc83de701c77">this JSON</a> to the application to see and edit the current grammar that the application uses. If I feel like it I'll probably end up making this a feature of the generator. </p>
+<p>If you'd like to bulk add dictionary data to the app, have a look at <a target="_blank" href="https://gist.github.com/bennetthardwick/0a51d675d72ed056db78bdea5d5b4a55">this JSON.</a>
+<p>After you have your JSON files ready, hit up the <a routerLink="/settings">settings</a> page and link them from a website that doens't use CORS, like <a target="_blank" href="https://gist.github.com">gist.github.com</a>.</p>
+
+<h3>how it works</h3>
+<p>Each sentence is essentially a journey across a directed graph which controls the grammar. When the app reaches a node that has more than one children, it chooses a path randomly, with equal probability. This continues until the app reaches the end of the graph and the random sentence is generated. Check out the <a target="_blank" href="https://github.com/bennetthardwick/project-idea-generator-angular">source code</a> on github.</p>

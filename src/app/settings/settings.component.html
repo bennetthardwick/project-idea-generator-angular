@@ -1,3 +1,38 @@
-<p>
-  settings works!
-</p>
+<div matTooltip="Note: Check the 'about' page for help">
+  <h3>add new words</h3>
+  <mat-form-field>
+    <mat-select [(value)]="word_type">
+      <mat-option value="_adjective">Adjective</mat-option>
+      <mat-option value="_noun">Noun</mat-option>
+      <mat-option value="_verb">Verb</mat-option>
+      <mat-option value="_app">App Name</mat-option>
+      <mat-option value="_people">Group of People</mat-option>
+      <mat-option value="_build">Build Verb</mat-option>
+      <mat-option value="_app_type">App Type</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+      <input matInput [(placeholder)]="placeHolders[word_type]" [(ngModel)]="input_text">
+    </mat-form-field>
+  <button (click)="addWord()" mat-raised-button color="primary">add</button>
+
+  <h3>reset to defaults</h3>
+  <button (click)="resetGrammar()" mat-raised-button color="primary">grammar</button>
+  <button (click)="resetDictionary()" mat-raised-button color="primary">dictionary</button>
+  <button (click)="resetBoth()" mat-raised-button color="primary">both</button>
+
+  <h3>upload custom files</h3>
+  <div>
+  <mat-form-field class="full-width">
+      <input  matInput placeholder="Grammar URL" [(ngModel)]="grammar_url">
+    </mat-form-field>
+  <button (click)="uploadGrammar()" mat-raised-button color="primary">upload grammar</button>
+</div>
+<div>
+    <mat-form-field class="full-width">
+      <input   matInput placeholder="Dictionary URL" [(ngModel)]="dictionary_url">
+    </mat-form-field>
+  <button (click)="uploadDict()" mat-raised-button color="primary">upload dictionary</button>
+</div>
+</div>

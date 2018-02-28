@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GraphService } from '../graph.service';
+import { SentenceService } from '../sentence.service';
 
 @Component({
   selector: 'app-sentence',
@@ -8,16 +8,21 @@ import { GraphService } from '../graph.service';
 })
 export class SentenceComponent implements OnInit {
 
-  sentence: any = { sentence: "" };
+  sentence: string = "Press the 'generate' button for a new app idea.";
+  data: any;
 
-  constructor(private graph: GraphService) { }
+  constructor(private sentenceService: SentenceService) { }
 
   ngOnInit() {
   }
 
   generate() {
-    this.graph.getSentence()
-      .subscribe(x => this.sentence = x);
+    this.sentenceService.generateSentence()
+      .then(x => this.sentence = x);
+  }
+
+  getGraph() {
+
   }
 
 }
